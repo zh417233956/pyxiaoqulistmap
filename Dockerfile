@@ -1,6 +1,6 @@
 # 基于镜像基础
 # FROM python:3.7-alpine
-FROM python:3.7
+FROM python:3.7.2
 
 # 设置代码文件夹工作目录 /app
 WORKDIR /app
