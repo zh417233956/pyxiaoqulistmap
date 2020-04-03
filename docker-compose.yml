@@ -1,0 +1,14 @@
+﻿version: "3"
+
+services:
+  mangopyapi:
+    build: .
+    image: mango_py_keyword_search:1.0.0   
+    container_name: mango_py_keyword_search_v1_0_0
+    restart: always
+    ports:
+      - 9500:5000
+    # volumes:
+    #   - "/opt/python/keywordsearch/configs:/app/configs"
+    #   - "/opt/python/keywordsearch/data:/app/data"
+    #   - "/opt/python/keywordsearch/log:/app/log"
