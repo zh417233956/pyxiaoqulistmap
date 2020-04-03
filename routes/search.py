@@ -7,10 +7,27 @@ import logging
 
 
 @app.route('/api/search')
-def index():
+def search():
     try:
         q = request.args.get("q")
         _result = Search().search(q)
+        result = clientresult.success(_result, "检索成功")
+        pass
+    except Exception as e:
+        # msg = traceback.format_exc()
+        result = clientresult.error("请求异常:" + repr(e))
+        pass
+    content = json.dumps(result.__dict__)
+    resp = Response_headers(content)
+    return resp
+
+
+@app.route('/api/listmap')
+def listmap():
+    try:
+        first = request.args.get("first")
+        top = request.args.get("top")
+        _result = Search().xiaoqu_list_map(top, first)
         result = clientresult.success(_result, "检索成功")
         pass
     except Exception as e:

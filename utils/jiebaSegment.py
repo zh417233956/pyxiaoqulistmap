@@ -4,6 +4,7 @@ import codecs
 
 class Seg(object):
     stopword_filepath = "./configs/stopword.txt"
+    # stopword_filepath = "./configs/userdict.txt"
 
     def __init__(self):
         self.stopwords = set()
